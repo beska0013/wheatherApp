@@ -1,0 +1,63 @@
+
+
+<section>
+   <div class="card">
+    <ul class="title">
+      <li class="icon">
+        <svg *ngIf="clouds">
+          <use xlink:href="./assets/image/svg/cloudy.svg#cloudy"></use>
+        </svg>
+        <svg *ngIf="rain">
+          <use xlink:href="./assets/image/svg/rain.svg#rain"></use>
+        </svg>
+        <svg *ngIf="clear">
+          <use xlink:href="./assets/image/svg/sun.svg#sun"></use>
+        </svg>
+        <svg *ngIf="snow">
+          <use xlink:href="./assets/image/svg/snowing.svg#snow"></use>
+        </svg>
+      </li>
+      <li class="location"><h1>{{curentLocation}}</h1></li>
+      <li class="wheatherInfo">
+        <span>{{currentTemp}}</span> C | {{currentWeatherStatus}}
+      </li>
+    </ul>
+
+     <div class="card_content">
+       <ul class="date">
+         <li><h2>{{currentTime | date: 'EEEE'}}</h2></li>
+         <li><h2>{{currentTime | date: 'dd MMM YYYY'}}</h2></li>
+       </ul>
+       <ul class="weatherDetailes">
+         <li>
+           <svg>
+             <use xlink:href="./assets/image/svg/humidity.svg#humidity"></use>
+           </svg>
+          {{currentHumidity}} %
+
+         </li>
+         <li>
+           <svg>
+             <use xlink:href="./assets/image/svg/rainVolume.svg#rainVolume"></use>
+           </svg>
+           {{currentRainVolume}} mm
+         </li>
+         <li>
+           <svg>
+             <use xlink:href="./assets/image/svg/wind.svg#wind"></use>
+           </svg>
+            {{currentWindSpeed}} km\h
+         </li>
+       </ul>
+     </div>
+   </div>
+</section>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+
+
+<section>
+  <div class="card forecast-card">
+    <div class="card-header">
+      <h2>{{title}}</h2>
+
+    </div>
+    <div class="forecast-list">
+      <ul id="days">
+        <li *ngFor="let item of newDayForecast">
+          <div class="icon-time">
+            <div class="forecast-icon">
+              <svg *ngIf="item.clouds">
+                <use xlink:href="./assets/image/svg/cloudy.svg#cloudy"></use>
+              </svg>
+
+              <svg *ngIf="item.rain">
+                <use xlink:href="./assets/image/svg/rain.svg#rain"></use>
+              </svg>
+
+              <svg *ngIf="item.clearSky">
+                <use xlink:href="./assets/image/svg/sun.svg#sun"></use>
+              </svg>
+
+              <svg *ngIf="item.snow">
+                <use xlink:href="./assets/image/svg/snowing.svg#snow"></use>
+              </svg>
+
+            </div>
+            <div class="time-status">
+              <p>{{item.dt_txt | date: "HH:mm"}}</p>
+              <p>{{item.weather[0].main}}</p>
+            </div>
+          </div>
+          <div class="forecast-temp">
+            <span>{{item.main.temp | number : '1.0-0' }}</span> C
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <ul>
+        <li  *ngFor ="let day of dayListCopy"
+             (click)="select(day)" [ngClass] ='{activeBtn: isActive(day)}'>
+         <button>{{day}}</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

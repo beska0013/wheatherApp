@@ -1,0 +1,11 @@
+
+<app-header [state] = dayTime></app-header>
+<main>
+  <div class="time">
+    <p>
+      {{time | date: "HH:mm"}}
+    </p>
+  </div>
+<router-outlet></router-outlet>
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,62 @@
+
+
+
+@mixin bgLight(){
+  background: rgb(5, 208, 255);
+  background: -moz-linear-gradient(90deg, rgba(5, 208, 255, 1) 0%, rgba(5, 204, 255, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(5, 208, 255, 1) 0%, rgba(5, 204, 255, 1) 100%);
+  background: linear-gradient(90deg, rgba(5, 208, 255, 1) 0%, rgba(5, 204, 255, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#05d0ff", endColorstr="#05ccff", GradientType=1);
+}
+@mixin bgGray(){
+  background: rgb(105,112,113)!important;
+  background: -moz-linear-gradient(90deg, rgba(105,112,113,1) 0%, rgba(62,72,75,1) 100%)!important;
+  background: -webkit-linear-gradient(90deg, rgba(105,112,113,1) 0%, rgba(62,72,75,1) 100%)!important;
+  background: linear-gradient(90deg, rgba(105,112,113,1) 0%, rgba(62,72,75,1) 100%)!important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#697071",endColorstr="#3e484b",GradientType=1)!important;
+}
+@mixin bgNight(){
+  background: rgb(1,18,70);
+  background: -moz-linear-gradient(90deg, rgba(1,18,70,1) 0%, rgba(1,17,65,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(1,18,70,1) 0%, rgba(1,17,65,1) 100%);
+  background: linear-gradient(90deg, rgba(1,18,70,1) 0%, rgba(1,17,65,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#011246",endColorstr="#011141",GradientType=1);
+}
+
+
+@mixin flex($spacing : none,$direction : row){
+  display:flex;
+  @if $direction == column{
+    flex-direction: column;
+  }
+  @if $spacing == between{
+    justify-content: space-between;
+  }
+  @else if $spacing == around{
+    justify-content: space-around;
+  }
+  @else if $spacing == center{
+    justify-content:center;
+  }
+  @else if $spacing == end{
+    justify-content:flex-end;
+  }
+  @else if $spacing == start{
+    justify-content:flex-start;
+  }
+  align-items:center;
+}
+
+@mixin transition($name){
+  transition: $name .3s ease-in-out;
+}
+
+@mixin size($height,$width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin square($size){
+  width:$size;
+  height:$size;
+}

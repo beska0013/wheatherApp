@@ -1,0 +1,20 @@
+@import '../../../../src/assets/scss/_link.scss';
+
+
+
+
+
+
+@media screen and(max-width: 575px){
+  .forecast-list{
+    ul{
+      li{
+        .icon-time{
+          width: 45%;
+
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<header>
+  <div class="daynight">
+    <div *ngIf="state; else night" class="sun">
+      <svg>
+        <use xlink:href="./assets/image/svg/sun.svg#sun"></use>
+      </svg>
+    </div>
+    <ng-template #night>
+      <div class="night-version" >
+        <svg>
+          <use xlink:href="./assets/image/svg/moon.svg#moon"></use>
+        </svg>
+      </div>
+      <svg class="cloud1">
+        <use xlink:href="./assets/image/svg/cloude1.svg#cloude1"></use>
+      </svg>
+
+      <svg class="cloud2">
+        <use xlink:href="./assets/image/svg/cloude2.svg#cloude2"></use>
+      </svg>
+    </ng-template>
+
+
+
+
+
+  </div>
+</header>
+

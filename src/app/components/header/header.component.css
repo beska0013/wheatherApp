@@ -1,0 +1,77 @@
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+header svg {
+  width: 250px;
+  height: 250px;
+}
+header .daynight {
+  position: relative;
+}
+header .daynight .sun svg {
+  animation: rotate 360s linear infinite;
+}
+header .daynight .cloud1 {
+  position: absolute;
+  height: 130px;
+  bottom: 0;
+  left: -100px;
+  z-index: 1;
+  animation: fade-in 1s linear;
+}
+header .daynight .cloud2 {
+  position: absolute;
+  height: 130px;
+  bottom: -20px;
+  right: -55px;
+  animation: fade-in 1s linear;
+}
+
+.night-version svg {
+  animation: shake 90s linear infinite;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 100vh;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-3600deg);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    filter: blur(0);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/*# sourceMappingURL=header.component.css.map */

@@ -1,0 +1,74 @@
+@import "../../../../src/assets/scss/_link.scss";
+
+
+footer{
+@include flex(center);
+  padding: 1em 0;
+  .btn{
+    @include flex(between);
+    width: 15vw;;
+  }
+  a{
+    @include flex(center,column);
+    position: relative;
+    font-family: 'Amatic SC', cursive;
+    font-size: 2vw;
+    font-weight: 700;
+    color: #ffffff;
+    width: 100%;
+    text-shadow: 6px 4px 10px #0000007a;
+    @include transition(all);
+    svg{
+     @include size(3vw,3.5vw);
+      min-height: 20px;
+      min-width: 30px;
+    }
+    &::after{
+      content: '';
+      @include size(4px,0);
+      position: absolute;
+      background-color: #fae202;
+      border-radius: 3px;
+      bottom: 0;
+      @include transition(width);
+    }
+    &:hover{
+      color: #fae202;
+      @include transition(color);
+    }
+    &:hover::after{
+      @include transition(width);
+      width: 50%;
+    }
+    &:active{
+      text-shadow: none;
+      @include transition(text-shadow);
+    }
+  }
+}
+.is-active{
+  color: #fae202!important;
+}
+
+@media screen and(max-width: 1120px){
+  footer{
+    a{
+      font-size: 20px;
+      margin: 0 1rem;
+    }
+  }
+}
+
+@media screen and(max-width: 768px){
+  footer{
+    a{
+      svg{
+        @include size(40px, 60x);
+
+      }
+    }
+    .btn{
+      width: 60vw;
+    }
+  }
+}

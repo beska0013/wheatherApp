@@ -1,0 +1,7 @@
+@media screen and (max-width: 575px) {
+  .forecast-list ul li .icon-time {
+    width: 45%;
+  }
+}
+
+/*# sourceMappingURL=today-module.component.css.map */

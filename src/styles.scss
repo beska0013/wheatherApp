@@ -1,0 +1,178 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../src/assets/scss/_link.scss";
+//--FONTS--//
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Nunito:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+
+.day    {
+  @include bgLight();
+  @include transition(background);
+}
+.night  {
+  @include bgNight();
+  @include transition(background);
+}
+.cloudy {
+  @include bgGray();
+  @include transition(background);
+}
+.card{
+  @include flex(between,column);
+  @include size(40vw, 35vw);
+  max-height: 750px;
+  min-height: 630px;
+  min-width: 550px;
+  background: rgb(212 235 246 / 23%);
+  box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+  backdrop-filter: blur(5px) saturate(140%);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid #ffffff21;
+  border-radius: 50px;
+  padding: 1.5rem;
+  margin: 0 0 8vw 0;
+  .title{
+    @include flex(centre, column);
+    .icon{
+      @include square(300px);
+      svg{
+        @include square(100%)
+      }
+    }
+    .location{
+      color: #FFFFFF;
+      text-transform: capitalize;
+      font-family: 'Bellota Text', cursive;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 1px 2px 1px #0000007a;
+    }
+    .wheatherInfo{
+      font-family: 'Bellota Text', cursive;
+      color:#fae202;
+      font-weight: 700;
+      font-size: 48px;
+      text-shadow: 1px 2px 1px #0000007a;
+      span::after{
+        content: '°';
+      }
+    }
+  }
+  .card_content{
+    @include flex(between);
+    @include size(30%,100%);
+    .date{
+      font-family: 'Nunito',sans-serif;
+      font-size: 24px;
+      color: #FFFFFF;
+      text-transform: capitalize;
+      text-shadow: 1px 2px 1px #0000007a;
+      letter-spacing: 1px;
+      height: 100%;
+      @include flex(start,column);
+      align-items: flex-start;
+    }
+    .weatherDetailes{
+      @include flex(between, column);
+      @include size(100%,22%);
+      height: 100%;
+      li{
+        @include flex(start);
+        width: 100%;
+        color: #FFFFFF;
+        text-shadow: 1px 2px 1px #0000007a;
+        svg{
+          @include square(50px);
+          margin: 0 1em 0 0;
+        }
+      }
+
+    }
+  }
+}
+html,body{
+  height: 100%;
+  scroll-behavior: smooth;
+}
+body{
+  @include transition(background);
+}
+button{
+  border:0;
+  outline:0;
+  font: inherit;
+  cursor: pointer;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+  &:active {
+    color: #ffffff;
+  }
+}
+li {list-style: none}
+
+app-header,app-footer{
+  position: fixed;
+  width: 100%;
+}
+app-header{top:0;}
+app-footer{bottom:0;}
+
+main{
+  @include square(100%);
+  @include flex(center,column);
+}
+
+@media screen and(max-width: 1400px){
+  .card{
+    width: 60vw;
+  }
+}
+
+@media screen and(max-width: 575px){
+main{
+  padding: 0 1rem;
+}
+  .card{
+    width: 100%;
+    min-width: 90vw;
+    margin: 0 0 1vw 0;
+  }
+}
+
+@media screen and(max-height: 670px){
+  app-footer{
+    position:static;
+  }
+  .card{
+    min-height: 100vw;
+    min-width: 70vw;
+    margin: 0;
+  }
+}
+
+@media screen and(max-width: 575px){
+  .card{
+    .title{
+      .icon{
+        @include square(150px);
+      }
+    }
+    .card_content{
+      .date{
+        font-size: 20px;
+      }
+
+    }
+  }
+}

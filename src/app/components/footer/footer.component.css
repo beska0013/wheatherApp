@@ -1,0 +1,76 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+}
+footer .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15vw;
+}
+footer a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: "Amatic SC", cursive;
+  font-size: 2vw;
+  font-weight: 700;
+  color: #ffffff;
+  width: 100%;
+  text-shadow: 6px 4px 10px #0000007a;
+  transition: all 0.3s ease-in-out;
+}
+footer a svg {
+  height: 3vw;
+  width: 3.5vw;
+  min-height: 20px;
+  min-width: 30px;
+}
+footer a::after {
+  content: "";
+  height: 4px;
+  width: 0;
+  position: absolute;
+  background-color: #fae202;
+  border-radius: 3px;
+  bottom: 0;
+  transition: width 0.3s ease-in-out;
+}
+footer a:hover {
+  color: #fae202;
+  transition: color 0.3s ease-in-out;
+}
+footer a:hover::after {
+  transition: width 0.3s ease-in-out;
+  width: 50%;
+}
+footer a:active {
+  text-shadow: none;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.is-active {
+  color: #fae202 !important;
+}
+
+@media screen and (max-width: 1120px) {
+  footer a {
+    font-size: 20px;
+    margin: 0 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer a svg {
+    height: 40px;
+    width: 60x;
+  }
+  footer .btn {
+    width: 60vw;
+  }
+}
+
+/*# sourceMappingURL=footer.component.css.map */

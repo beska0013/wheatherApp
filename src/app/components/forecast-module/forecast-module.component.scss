@@ -1,0 +1,166 @@
+@import '../../../../src/assets/scss/_link.scss';
+
+.forecast-card{
+  padding: 0!important;
+  overflow: hidden;
+}
+.activeBtn{
+  background-color:  #fae202;
+  @include transition(all);
+  &:hover button{
+    color: #000000!important;
+    transform: scale(1.5);
+    @include transition( all);
+  }
+  button{
+    color: #000000!important;
+  }
+}
+.card-header{
+  @include flex(between);
+  width: 100%;
+  font-family: "Amatic SC", cursive;
+  font-size: 32px;
+  font-weight: 700;
+  padding: .5em 2em;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff21;
+  h2{
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  }
+}
+.forecast-list{
+  width: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: #B3AFB3;
+    border: 6.8px outset #96D0ED;
+    border-radius: 30px;
+  }
+  &::-webkit-scrollbar-thumb:hover{
+    background: #377294;
+  }
+  &::-webkit-scrollbar-track{
+    background: rgba(240, 240, 240, 0.13);
+    border-radius: 30px;
+    box-shadow: inset 1.2px -1px 12px 0px #F0F0F0;
+  }
+  ul{
+    width: 100%;
+    li{
+      @include flex(between);
+      padding: 0 1em;
+      font-family: "Nunito", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #FFFFFF;
+      border-bottom: 1px solid #ffffff21;
+      .icon-time{
+        @include flex(between);
+        width: 25%;
+    .forecast-icon{
+      width: 50%;
+      margin: 0 1rem 0 0;
+  svg{
+    @include square(60px)
+  }
+    }
+        .time-status{
+          width: 50%;
+        }
+      }
+      .forecast-temp{
+        span::after{
+          content: "°"
+        }
+      }
+    }
+  }
+}
+.card-footer{
+  @include size(10%,100%);
+  border-top: 1px solid #ffffff21;
+  ul{
+    @include flex(between);
+    @include square(100%);
+    li{
+      @include square(100%);
+      @include flex(center);
+      @include transition(all);
+      font-family: "Amatic SC", cursive;
+      font-size: 2vw;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+      cursor: pointer;
+      button{
+        color: #FFFFFF;
+        background-color: transparent;
+        @include transition( transform);
+      }
+      &:hover button{
+        color: #fae202;
+        transform: scale(1.5);
+        @include transition( all);
+      }
+
+    }
+  }
+}
+
+@media screen and(max-width: 1120px){
+  .card-footer{
+    ul{
+      li{
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 575px){
+  .forecast-list{
+    ul{
+      li{
+        .icon-time{
+          width: 45%;
+
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 475px){
+  .card-header{
+    width: 40%;
+    .controls{
+      svg{
+        margin:0 1rem;
+
+
+      }
+    }
+  }
+}
+
+
+
+@media screen and(max-width: 475px){
+  .forecast-list{
+    ul{
+      li{
+        .icon-time{
+          width: 81%;
+        }
+
+      }
+    }
+  }
+}

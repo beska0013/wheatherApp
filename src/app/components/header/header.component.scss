@@ -1,0 +1,84 @@
+@import "../../../../src/assets/scss/_link.scss";
+
+
+header{
+  @include flex(end);
+  width: 100%;
+  padding: 1rem;
+  svg{
+    @include square(250px)
+  }
+  .daynight{
+    position: relative;
+    .sun{
+      svg{
+        animation: rotate 360s linear infinite;
+      }
+    }
+    .cloud1{
+      position: absolute;
+      height: 130px;
+      bottom: 0;
+      left: -100px;
+      z-index:1;
+      animation: fade-in 1s linear;
+    }
+    .cloud2{
+      position: absolute;
+      height: 130px;
+      bottom: -20px;
+      right: -55px;
+      animation: fade-in 1s linear;
+    }
+  }
+
+}
+.night-version{
+  svg{
+   animation: shake 90s linear infinite;
+
+  }
+}
+
+@media screen and (max-width: 768px){
+  header{
+    height: 100vh;
+  }
+}
+
+@keyframes shake{
+  0%{
+ transform: rotate(45deg)
+  }
+  50%{
+    transform: rotate(-45deg)
+  }
+  100%{
+    transform: rotate(45deg)
+  }
+}
+
+@keyframes rotate{
+  0% { transform: rotate(0deg)}
+
+  100% { transform: rotate(-3600deg)}
+}
+
+@keyframes fade-in {
+ 0%{
+   opacity: 0;
+   filter:blur(0);
+ }
+  50%{
+    opacity: 1;
+    filter:blur(20px);
+  }
+  100%{
+    opacity: 1;
+    filter:blur(0);
+  }
+}
+
+@media screen and(max-width: 475px){
+
+}
